@@ -1,0 +1,17 @@
+name: RCA Linker
+on: { issues: { types: [opened] } }
+jobs:
+  create-rca-file:
+    if: contains(github.event.issue.title, '[Redline]')
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create RCA placeholder
+        run: |
+          mkdir -p rca
+          FILE="rca/RCA-${{ github.event.issue.number }}.md"
+          printf "# RCA: RCA-%s\n\n**Related Issue:** #%s\n\n## Problem Statement\n\n## Evidence & DAM Mapping\n\n## Analysis (5-Whys/Fishbone/Fault Tree)\n\n## Risks & Mitigations\n\n## Public Comment Summary (48h)\n\n## Decision\n" ${GITHUB_EVENT_NUMBER} ${GITHUB_EVENT_NUMBER} > "$FILE"
+          git config user.email "bot@users.noreply.github.com"
+          git config user.name  "rca-bot"
+          git add "$FILE" && git commit -m "Add RCA for issue #${GITHUB_EVENT_NUMBER}" && git push

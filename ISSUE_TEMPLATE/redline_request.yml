@@ -1,0 +1,20 @@
+name: "Redline Request"
+title: "[Redline] <module>: <short description>"
+labels: ["redline"]
+body:
+  - type: input
+    id: location
+    attributes: { label: Specific Location (path or clause) }
+    validations: { required: true }
+  - type: textarea
+    id: proposed
+    attributes: { label: Proposed Change (```diff```), description: "Show old→new" }
+    validations: { required: true }
+  - type: input
+    id: dam
+    attributes: { label: DAM Row IDs (e.g., DAM-001, DAM-047) }
+    validations: { required: true }
+  - type: dropdown
+    id: change_type
+    attributes: { label: Version Target, options: ["PATCH","MINOR","MAJOR"] }
+    validations: { required: true }

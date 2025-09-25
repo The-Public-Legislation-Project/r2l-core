@@ -1,0 +1,16 @@
+name: "Root Cause Analysis (RCA)"
+title: "[RCA] <module>: <short desc>"
+labels: ["RCA"]
+body:
+  - type: input
+    id: redline
+    attributes: { label: Related Redline Issue # }
+    validations: { required: true }
+  - type: textarea
+    id: scope
+    attributes: { label: Scope/Location }
+    validations: { required: true }
+  - type: dropdown
+    id: change_type
+    attributes: { label: Change Type, options: ["MAJOR","MINOR"] }
+    validations: { required: true }

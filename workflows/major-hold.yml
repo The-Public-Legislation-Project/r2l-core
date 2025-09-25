@@ -1,0 +1,5 @@
+name: MAJOR 48h Gate
+on: { pull_request: { types: [opened, labeled, synchronize, reopened] } }
+jobs: { hold: { runs-on: ubuntu-latest, steps: [
+  { uses: 'actions/github-script@v7', with: { script: "const pr=context.payload.pull_request; const opened=new Date(pr.created_at).getTime(); const hours=(Date.now()-opened)/36e5; if(!pr.labels) return; const names=pr.labels.map(l=>l.name); if(names.includes('MAJOR') && hours<48){ core.setFailed(`Needs >=48h; current=${hours.toFixed(1)}h`) }" } }
+] } }
