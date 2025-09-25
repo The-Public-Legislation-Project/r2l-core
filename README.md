@@ -7,3 +7,4 @@ This repo is automation + redline-ready out of the box. Generated 2025-09-25.
 3) Create branch `develop`. Protect `main` & `develop` (require PR + checks).
 4) Open the sample PR (edit a seed file) — CI should pass.
 5) Create a **[Redline]** issue — bot creates an RCA file under `/rca/`.
+6) Have a great time!
