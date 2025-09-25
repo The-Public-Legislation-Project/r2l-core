@@ -1,8 +1,0 @@
-# Knowledge Base (MoC)
-- [Public quickstart](audiences/public.md)
-- [Expert onboarding](audiences/expert.md)
-- [Legislative memo structure](audiences/legislative.md)
-- [How to: submit a redline](howto/submit_redline.md)
-- [How to: map to DAM](howto/map_to_DAM.md)
-- [Glossary](glossary/terms.md)
-- [Workshop kit](workshops/60min_kit.md)
