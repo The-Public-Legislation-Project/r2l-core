@@ -1,0 +1,9 @@
+name: Smoke CI
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Actions are working."
