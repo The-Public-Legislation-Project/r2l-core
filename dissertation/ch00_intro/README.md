@@ -1,0 +1,1 @@
+Each chapter subsection is its own file for precise diffs.
